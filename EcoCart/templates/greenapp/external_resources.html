@@ -1,0 +1,114 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}External Resources | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">External Resources</h1>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Category Filter -->
+            <div class="mb-4">
+                <h5>Filter by Category</h5>
+                <div class="d-flex flex-wrap">
+                    <a href="{% url 'external_resources' %}" class="btn btn-sm {% if not request.GET.category %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">All</a>
+                    {% for category in categories %}
+                    <a href="{% url 'external_resources' %}?category={{ category.id }}" class="btn btn-sm {% if request.GET.category == category.id|stringformat:'i' %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Resources List -->
+            <div class="list-group mb-4">
+                {% for resource in resources %}
+                <div class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-1">{{ resource.title }}</h5>
+                        {% if resource.category %}
+                        <span class="badge bg-success">{{ resource.category.name }}</span>
+                        {% endif %}
+                    </div>
+                    <p class="mb-2">{{ resource.description }}</p>
+                    <a href="{{ resource.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                        <i class="fas fa-external-link-alt me-1"></i> Visit Website
+                    </a>
+                </div>
+                {% empty %}
+                <div class="text-center py-4">
+                    <p>No external resources found.</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}">{{ num }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">About These Resources</h5>
+                </div>
+                <div class="card-body">
+                    <p>We've curated a collection of trusted external websites and resources to help you learn more about sustainable living, eco-friendly products, and environmental issues.</p>
+                    <p>These resources are organized by category to make it easier for you to find information relevant to your interests.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Suggest a Resource</h5>
+                </div>
+                <div class="card-body">
+                    <p>Know of a great eco-friendly website or resource that should be included in our list?</p>
+                    <p>We welcome suggestions from our community members!</p>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-success">
+                        <i class="fas fa-plus-circle me-1"></i> Suggest a Resource
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

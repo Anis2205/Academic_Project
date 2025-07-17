@@ -1,0 +1,98 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}My Reviews | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">My Reviews</h1>
+    
+    {% if reviews %}
+    <div class="card">
+        <div class="list-group list-group-flush">
+            {% for review in reviews %}
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-2 mb-3 mb-md-0">
+                        {% if review.product.image %}
+                        <img src="{{ review.product.image.url }}" class="img-fluid rounded" alt="{{ review.product.name }}">
+                        {% else %}
+                        <div class="bg-light d-flex align-items-center justify-content-center rounded" style="height: 100px;">
+                            <i class="fas fa-image fa-2x text-muted"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-10">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">
+                                <a href="{% url 'product_detail' review.product.slug %}">{{ review.product.name }}</a>
+                            </h5>
+                            <small class="text-muted">{{ review.created|date:"F j, Y" }}</small>
+                        </div>
+                        <div class="rating mb-2">
+                            {% for i in "12345" %}
+                            <i class="{% if forloop.counter <= review.rating %}fas{% else %}far{% endif %} fa-star"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="mb-0">{{ review.comment }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="First">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+    
+    {% else %}
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="far fa-star fa-4x text-muted mb-3"></i>
+            <h3>You haven't written any reviews yet</h3>
+            <p class="mb-4">Share your thoughts on eco-friendly products you've used!</p>
+            <a href="{% url 'product_list' %}" class="btn btn-primary">Browse Products</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

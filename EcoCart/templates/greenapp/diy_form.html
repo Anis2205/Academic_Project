@@ -1,0 +1,142 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}{% if form.instance.pk %}Edit{% else %}Create{% endif %} DIY Tutorial | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">{% if form.instance.pk %}Edit{% else %}Create{% endif %} DIY Tutorial</h1>
+    
+    <div class="card">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="id_title" class="form-label">Title</label>
+                    {{ form.title }}
+                    {% if form.title.errors %}
+                    <div class="text-danger">
+                        {% for error in form.title.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_category" class="form-label">Category</label>
+                    {{ form.category }}
+                    {% if form.category.errors %}
+                    <div class="text-danger">
+                        {% for error in form.category.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_description" class="form-label">Description</label>
+                    {{ form.description }}
+                    {% if form.description.errors %}
+                    <div class="text-danger">
+                        {% for error in form.description.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_materials" class="form-label">Materials Needed</label>
+                    {{ form.materials }}
+                    {% if form.materials.errors %}
+                    <div class="text-danger">
+                        {% for error in form.materials.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="form-text">List the materials needed for this DIY project, one per line.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_instructions" class="form-label">Instructions</label>
+                    {{ form.instructions }}
+                    {% if form.instructions.errors %}
+                    <div class="text-danger">
+                        {% for error in form.instructions.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="form-text">Provide step-by-step instructions for the DIY project.</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="id_difficulty" class="form-label">Difficulty Level</label>
+                            {{ form.difficulty }}
+                            {% if form.difficulty.errors %}
+                            <div class="text-danger">
+                                {% for error in form.difficulty.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="id_time_required" class="form-label">Time Required</label>
+                            {{ form.time_required }}
+                            {% if form.time_required.errors %}
+                            <div class="text-danger">
+                                {% for error in form.time_required.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">Estimated time to complete (e.g., '30 minutes', '2 hours')</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_image" class="form-label">Image</label>
+                    {{ form.image }}
+                    {% if form.image.errors %}
+                    <div class="text-danger">
+                        {% for error in form.image.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="form-text">Upload an image of the completed project (optional).</div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="id_document" class="form-label">Document</label>
+                    {{ form.document }}
+                    {% if form.document.errors %}
+                    <div class="text-danger">
+                        {% for error in form.document.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="form-text">Upload a document with additional information (optional).</div>
+                </div>
+                
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-primary">
+                        {% if form.instance.pk %}Update{% else %}Create{% endif %} Tutorial
+                    </button>
+                    <a href="{% if form.instance.pk %}{% url 'diy_detail' form.instance.slug %}{% else %}{% url 'diy_list' %}{% endif %}" class="btn btn-outline-secondary ms-2">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}My Wishlist | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">My Wishlist</h1>
+    
+    {% if wishlist_items %}
+    <div class="row">
+        {% for item in wishlist_items %}
+        <div class="col-md-4 col-lg-3 mb-4">
+            <div class="card h-100 product-card">
+                {% if item.product.image %}
+                <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ item.product.name }}" style="height: 200px; object-fit: cover;">
+                {% else %}
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                    <i class="fas fa-leaf fa-3x text-success"></i>
+                </div>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.product.name }}</h5>
+                    <p class="card-text text-success fw-bold">${{ item.product.price }}</p>
+                    <div class="mb-2">
+                        {% if item.product.is_compostable %}<span class="eco-badge">Compostable</span>{% endif %}
+                        {% if item.product.is_recyclable %}<span class="eco-badge">Recyclable</span>{% endif %}
+                        {% if item.product.is_reusable %}<span class="eco-badge">Reusable</span>{% endif %}
+                        {% if item.product.is_biodegradable %}<span class="eco-badge">Biodegradable</span>{% endif %}
+                        {% if item.product.is_organic %}<span class="eco-badge">Organic</span>{% endif %}
+                        {% if item.product.is_energy_efficient %}<span class="eco-badge">Energy Efficient</span>{% endif %}
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="rating">
+                            {% with avg_rating=item.product.get_average_rating %}
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= avg_rating %}
+                                <i class="fas fa-star"></i>
+                                {% elif forloop.counter <= avg_rating|add:0.5 %}
+                                <i class="fas fa-star-half-alt"></i>
+                                {% else %}
+                                <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                            {% endwith %}
+                        </div>
+                        <small class="text-muted">{{ item.product.reviews.count }} reviews</small>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
+                    <a href="{% url 'product_detail' item.product.slug %}" class="btn btn-sm btn-outline-primary">View Details</a>
+                    <form action="{% url 'toggle_wishlist' item.product.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer bg-transparent text-muted">
+                    <small>Added on {{ item.added|date:"M d, Y" }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="First">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+    
+    {% else %}
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="far fa-heart fa-4x text-muted mb-3"></i>
+            <h3>Your wishlist is empty</h3>
+            <p class="mb-4">Start adding eco-friendly products to your wishlist!</p>
+            <a href="{% url 'product_list' %}" class="btn btn-primary">Browse Products</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

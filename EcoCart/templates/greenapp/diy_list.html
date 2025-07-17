@@ -1,0 +1,127 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}DIY Eco-Friendly Tutorials | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">DIY Eco-Friendly Tutorials</h1>
+    
+    <!-- Search and Filter Form -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" action="{% url 'diy_list' %}">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" name="query" class="form-control" placeholder="Search tutorials..." value="{{ request.GET.query|default:'' }}">
+                    </div>
+                    <div class="col-md-3">
+                        {{ search_form.category }}
+                    </div>
+                    <div class="col-md-2">
+                        {{ search_form.difficulty }}
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-primary w-100">Filter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Create New DIY Button -->
+    {% if user.is_authenticated %}
+    <div class="mb-4 text-end">
+        <a href="{% url 'diy_create' %}" class="btn btn-success">
+            <i class="fas fa-plus me-1"></i> Create New Tutorial
+        </a>
+    </div>
+    {% endif %}
+    
+    <!-- DIY Tutorials Grid -->
+    <div class="row">
+        {% for tutorial in tutorials %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if tutorial.image %}
+                <img src="{{ tutorial.image.url }}" class="card-img-top" alt="{{ tutorial.title }}" style="height: 200px; object-fit: cover;">
+                {% else %}
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                    <i class="fas fa-tools fa-3x text-primary"></i>
+                </div>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ tutorial.title }}</h5>
+                    <p class="card-text">{{ tutorial.description|truncatechars:100 }}</p>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge {% if tutorial.difficulty == 'easy' %}bg-success{% elif tutorial.difficulty == 'medium' %}bg-warning{% else %}bg-danger{% endif %}">
+                            {{ tutorial.difficulty|title }}
+                        </span>
+                        <small class="text-muted">{{ tutorial.time_required }}</small>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">By <a href="{% url 'user_profile' tutorial.author.username %}">{{ tutorial.author.username }}</a></small>
+                        <small class="text-muted">{{ tutorial.created|date:"M d, Y" }}</small>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="{% url 'diy_detail' tutorial.slug %}" class="btn btn-sm btn-outline-primary">View Tutorial</a>
+                    {% if user == tutorial.author %}
+                    <a href="{% url 'diy_update' tutorial.slug %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <p>No DIY tutorials found matching your criteria.</p>
+            {% if user.is_authenticated %}
+            <a href="{% url 'diy_create' %}" class="btn btn-success">Create the First Tutorial</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="First">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}

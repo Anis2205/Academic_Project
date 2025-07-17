@@ -1,0 +1,195 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}{{ tutorial.title }} | EcoCart DIY{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diy_list' %}">DIY Tutorials</a></li>
+            {% if tutorial.category %}
+            <li class="breadcrumb-item"><a href="{% url 'diy_list' %}?category={{ tutorial.category.id }}">{{ tutorial.category.name }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">{{ tutorial.title }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="mb-3">{{ tutorial.title }}</h1>
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <span class="badge {% if tutorial.difficulty == 'easy' %}bg-success{% elif tutorial.difficulty == 'medium' %}bg-warning{% else %}bg-danger{% endif %} me-2">
+                        {{ tutorial.difficulty|title }}
+                    </span>
+                    <span class="text-muted">Time: {{ tutorial.time_required }}</span>
+                </div>
+                <div>
+                    <small class="text-muted">By <a href="{% url 'user_profile' tutorial.author.username %}">{{ tutorial.author.username }}</a></small>
+                    <small class="text-muted ms-2">{{ tutorial.created|date:"F j, Y" }}</small>
+                </div>
+            </div>
+            
+            {% if tutorial.image %}
+            <img src="{{ tutorial.image.url }}" class="img-fluid rounded mb-4" alt="{{ tutorial.title }}">
+            {% endif %}
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Description</h5>
+                    <p>{{ tutorial.description }}</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Materials Needed</h5>
+                </div>
+                <div class="card-body">
+                    <pre class="mb-0">{{ tutorial.materials }}</pre>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Instructions</h5>
+                </div>
+                <div class="card-body">
+                    <pre class="mb-0">{{ tutorial.instructions }}</pre>
+                </div>
+            </div>
+            
+            {% if tutorial.document %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Attached Document</h5>
+                </div>
+                <div class="card-body">
+                    <a href="{{ tutorial.document.url }}" class="btn btn-outline-primary" target="_blank">
+                        <i class="fas fa-file-download me-1"></i> Download Document
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if user == tutorial.author %}
+            <div class="d-flex mb-5">
+                <a href="{% url 'diy_update' tutorial.slug %}" class="btn btn-primary me-2">Edit Tutorial</a>
+                <a href="{% url 'diy_delete' tutorial.slug %}" class="btn btn-danger">Delete Tutorial</a>
+            </div>
+            {% endif %}
+            
+            <!-- Comments Section -->
+            <div class="card" id="comments">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">Comments</h3>
+                    <span class="badge bg-secondary">{{ comments|length }}</span>
+                </div>
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'add_diy_comment' tutorial.slug %}" method="post" class="mb-4">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_comment" class="form-label">Add a Comment</label>
+                            {{ comment_form.comment }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                    {% else %}
+                    <div class="alert alert-info mb-4">
+                        <a href="{% url 'login' %}?next={{ request.path }}#comments">Login</a> to leave a comment.
+                    </div>
+                    {% endif %}
+                    
+                    {% if comments %}
+                    <div class="list-group">
+                        {% for comment in comments %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-1">
+                                    <a href="{% url 'user_profile' comment.user.username %}">{{ comment.user.username }}</a>
+                                </h6>
+                                <small class="text-muted">{{ comment.created|date:"F j, Y" }}</small>
+                            </div>
+                            <p class="mb-1">{{ comment.comment }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-center">No comments yet. Be the first to comment!</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <!-- Author Info -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">About the Author</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        {% if tutorial.author.profile.profile_picture %}
+                        <img src="{{ tutorial.author.profile.profile_picture.url }}" class="rounded-circle me-3" width="50" height="50" alt="{{ tutorial.author.username }}">
+                        {% else %}
+                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            {{ tutorial.author.username|first|upper }}
+                        </div>
+                        {% endif %}
+                        <div>
+                            <h6 class="mb-0">{{ tutorial.author.username }}</h6>
+                            <small class="text-muted">{{ tutorial.author.profile.eco_points }} Eco Points</small>
+                        </div>
+                    </div>
+                    {% if tutorial.author.profile.bio %}
+                    <p class="mb-0">{{ tutorial.author.profile.bio|truncatechars:100 }}</p>
+                    {% endif %}
+                    <a href="{% url 'user_profile' tutorial.author.username %}" class="btn btn-sm btn-outline-primary mt-3">View Profile</a>
+                </div>
+            </div>
+            
+            <!-- Related Tutorials -->
+            {% if related_tutorials %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Related Tutorials</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        {% for related in related_tutorials %}
+                        <a href="{% url 'diy_detail' related.slug %}" class="list-group-item list-group-item-action">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-1">{{ related.title }}</h6>
+                                <span class="badge {% if related.difficulty == 'easy' %}bg-success{% elif related.difficulty == 'medium' %}bg-warning{% else %}bg-danger{% endif %}">
+                                    {{ related.difficulty|title }}
+                                </span>
+                            </div>
+                            <small class="text-muted">By {{ related.author.username }}</small>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Category Info -->
+            {% if tutorial.category %}
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Category: {{ tutorial.category.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <p>{{ tutorial.category.description }}</p>
+                    <a href="{% url 'diy_list' %}?category={{ tutorial.category.id }}" class="btn btn-sm btn-outline-primary">
+                        View More in {{ tutorial.category.name }}
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
