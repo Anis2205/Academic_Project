@@ -142,10 +142,6 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                 </ul>
-                <form class="d-flex me-2" action="{% url 'search' %}" method="get">
-                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">

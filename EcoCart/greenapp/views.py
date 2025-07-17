@@ -330,13 +330,19 @@ class UserLoginView(SuccessMessageMixin, LoginView):
 
 
 class UserLogoutView(LogoutView):
-    """Custom logout view"""
-    next_page = 'home'
+    """Custom logout view that handles both GET and POST requests"""
+    template_name = 'greenapp/logout.html'
+    http_method_names = ['get', 'post']
     
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             messages.info(request, "You have been logged out successfully.")
-        return super().dispatch(request, *args, **kwargs)
+        response = super().dispatch(request, *args, **kwargs)
+        
+        # Clear all session data
+        request.session.flush()
+        
+        return response
 
 
 class UserProfileView(LoginRequiredMixin, DetailView):
