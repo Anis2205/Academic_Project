@@ -1,0 +1,302 @@
+DEBUG 2025-07-20 21:45:53,260 middleware Path being checked: /admin-dashboard/
+DEBUG 2025-07-20 21:45:53,260 middleware Tracking visit for path: /admin-dashboard/
+DEBUG 2025-07-20 21:45:53,270 middleware Incrementing visit count for 2025-07-21 to 61
+DEBUG 2025-07-20 21:45:53,879 middleware Path being checked: /admin-dashboard/
+DEBUG 2025-07-20 21:45:53,879 middleware Tracking visit for path: /admin-dashboard/
+DEBUG 2025-07-20 21:45:53,889 middleware Incrementing visit count for 2025-07-21 to 62
+DEBUG 2025-07-20 21:45:54,080 middleware Path being checked: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,081 middleware Tracking visit for path: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,093 middleware Incrementing visit count for 2025-07-21 to 63
+DEBUG 2025-07-20 21:45:54,443 middleware Path being checked: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,444 middleware Tracking visit for path: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,461 middleware Incrementing visit count for 2025-07-21 to 64
+DEBUG 2025-07-20 21:45:54,612 middleware Path being checked: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,613 middleware Tracking visit for path: /admin-dashboard/
+DEBUG 2025-07-20 21:45:54,628 middleware Incrementing visit count for 2025-07-21 to 65
+DEBUG 2025-07-20 21:46:04,237 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:04,237 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:04,249 middleware Incrementing visit count for 2025-07-21 to 66
+DEBUG 2025-07-20 21:46:04,846 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:04,847 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:04,861 middleware Incrementing visit count for 2025-07-21 to 67
+DEBUG 2025-07-20 21:46:05,071 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:05,071 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:05,087 middleware Incrementing visit count for 2025-07-21 to 68
+DEBUG 2025-07-20 21:46:05,236 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:05,237 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:05,251 middleware Incrementing visit count for 2025-07-21 to 69
+DEBUG 2025-07-20 21:46:06,999 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:06,999 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:07,016 middleware Incrementing visit count for 2025-07-21 to 70
+DEBUG 2025-07-20 21:46:07,506 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:07,506 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:07,525 middleware Incrementing visit count for 2025-07-21 to 71
+DEBUG 2025-07-20 21:46:08,077 middleware Path being checked: /dashboard/
+DEBUG 2025-07-20 21:46:08,078 middleware Tracking visit for path: /dashboard/
+DEBUG 2025-07-20 21:46:08,099 middleware Incrementing visit count for 2025-07-21 to 72
+DEBUG 2025-07-20 21:46:09,398 middleware Path being checked: /history/
+DEBUG 2025-07-20 21:46:09,399 middleware Tracking visit for path: /history/
+DEBUG 2025-07-20 21:46:09,421 middleware Incrementing visit count for 2025-07-21 to 73
+DEBUG 2025-07-20 21:46:16,921 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:46:29,126 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:29,127 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:29,855 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:29,856 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,373 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,373 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,654 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,655 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,877 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:30,878 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,070 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,071 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,262 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,263 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,451 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,452 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,920 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:31,921 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:32,529 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:46:32,530 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:26,553 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:26,554 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,135 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,135 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,309 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,309 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,494 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:27,495 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:29,558 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:47:29,603 middleware Time spent on /dashboard/: 0.04 seconds
+DEBUG 2025-07-20 21:47:29,604 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-20 21:47:29,630 middleware Incrementing visit count for 2025-07-21 to 1
+DEBUG 2025-07-20 21:47:31,010 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:31,011 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:39,699 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:47:39,743 middleware Time spent on /dashboard/: 0.04 seconds
+DEBUG 2025-07-20 21:47:39,744 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-20 21:47:39,764 middleware Incrementing visit count for 2025-07-21 to 2
+DEBUG 2025-07-20 21:47:41,076 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:41,077 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:47,517 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:47:47,564 middleware Time spent on /dashboard/: 0.05 seconds
+DEBUG 2025-07-20 21:47:47,566 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-20 21:47:47,590 middleware Incrementing visit count for 2025-07-21 to 3
+DEBUG 2025-07-20 21:47:49,134 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:49,134 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:49,708 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:49,709 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:50,167 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:50,168 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:50,591 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:47:50,592 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:48:25,941 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:48:25,942 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:48:33,286 middleware Processing request for path: /logout/
+DEBUG 2025-07-20 21:48:33,326 middleware Time spent on /logout/: 0.04 seconds
+DEBUG 2025-07-20 21:48:33,329 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-20 21:48:33,352 middleware Incrementing visit count for 2025-07-21 to 4
+DEBUG 2025-07-20 21:48:34,645 middleware Processing request for path: /login/
+DEBUG 2025-07-20 21:48:34,674 middleware Time spent on /login/: 0.03 seconds
+DEBUG 2025-07-20 21:48:34,688 middleware Incrementing visit count for 2025-07-21 to 5
+DEBUG 2025-07-20 21:48:41,193 middleware Processing request for path: /login/
+DEBUG 2025-07-20 21:48:41,905 middleware Time spent on /login/: 0.71 seconds
+DEBUG 2025-07-20 21:48:41,907 middleware Incrementing visit count for 2025-07-21 to 6
+DEBUG 2025-07-20 21:49:26,709 middleware Processing request for path: /login/
+DEBUG 2025-07-20 21:49:27,466 middleware Time spent on /login/: 0.76 seconds
+DEBUG 2025-07-20 21:49:27,467 middleware Logging visit for authenticated user: sampleuser
+DEBUG 2025-07-20 21:49:27,476 middleware Incrementing visit count for 2025-07-21 to 7
+DEBUG 2025-07-20 21:49:27,499 middleware Processing request for path: /
+DEBUG 2025-07-20 21:49:27,518 middleware Time spent on /: 0.02 seconds
+DEBUG 2025-07-20 21:49:27,518 middleware Logging visit for authenticated user: sampleuser
+DEBUG 2025-07-20 21:49:27,531 middleware Incrementing visit count for 2025-07-21 to 8
+DEBUG 2025-07-20 21:49:27,646 middleware Processing request for path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:49:27,648 middleware Skipping tracking for excluded path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:49:34,854 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:49:34,855 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:50:02,901 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:50:02,901 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:50:28,534 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:51:07,377 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:07,378 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:08,613 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:08,614 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:12,226 middleware Processing request for path: /
+DEBUG 2025-07-20 21:51:12,270 middleware Time spent on /: 0.04 seconds
+DEBUG 2025-07-20 21:51:12,271 middleware Logging visit for authenticated user: sampleuser
+DEBUG 2025-07-20 21:51:12,298 middleware Incrementing visit count for 2025-07-21 to 9
+DEBUG 2025-07-20 21:51:12,299 middleware Incrementing unique visitors to 1 for user_8
+DEBUG 2025-07-20 21:51:13,813 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:13,814 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:21,593 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:51:42,536 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:51:42,536 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:12,476 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:55:13,129 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:13,130 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:18,660 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:18,661 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:27,338 middleware Processing request for path: /history/
+DEBUG 2025-07-20 21:55:27,369 middleware Time spent on /history/: 0.03 seconds
+DEBUG 2025-07-20 21:55:27,371 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:55:27,400 middleware Incrementing visit count for 2025-07-21 to 10
+DEBUG 2025-07-20 21:55:27,402 middleware Incrementing unique visitors to 2 for user_1
+DEBUG 2025-07-20 21:55:29,782 middleware Processing request for path: /
+DEBUG 2025-07-20 21:55:29,848 middleware Time spent on /: 0.07 seconds
+DEBUG 2025-07-20 21:55:29,850 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:55:29,872 middleware Incrementing visit count for 2025-07-21 to 11
+DEBUG 2025-07-20 21:55:29,938 middleware Processing request for path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:55:29,941 middleware Skipping tracking for excluded path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:55:33,163 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:33,167 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:40,095 middleware Processing request for path: /
+DEBUG 2025-07-20 21:55:40,133 middleware Time spent on /: 0.04 seconds
+DEBUG 2025-07-20 21:55:40,135 middleware Logging visit for authenticated user: sampleuser
+DEBUG 2025-07-20 21:55:40,161 middleware Incrementing visit count for 2025-07-21 to 12
+DEBUG 2025-07-20 21:55:40,248 middleware Processing request for path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:55:40,249 middleware Skipping tracking for excluded path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 21:55:42,019 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:42,020 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:55:48,147 middleware Processing request for path: /history/
+DEBUG 2025-07-20 21:55:48,179 middleware Time spent on /history/: 0.03 seconds
+DEBUG 2025-07-20 21:55:48,181 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:55:48,207 middleware Incrementing visit count for 2025-07-21 to 13
+DEBUG 2025-07-20 21:56:01,812 middleware Processing request for path: /history/
+DEBUG 2025-07-20 21:56:01,826 middleware Time spent on /history/: 0.01 seconds
+DEBUG 2025-07-20 21:56:01,827 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:56:01,846 middleware Incrementing visit count for 2025-07-21 to 14
+DEBUG 2025-07-20 21:56:04,427 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:56:04,428 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:56:44,118 middleware Processing request for path: /admin/greenapp/sitevisitstats/
+DEBUG 2025-07-20 21:56:44,118 middleware Skipping tracking for excluded path: /admin/greenapp/sitevisitstats/
+DEBUG 2025-07-20 21:57:40,045 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:57:40,096 middleware Time spent on /dashboard/: 0.05 seconds
+DEBUG 2025-07-20 21:57:40,098 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:57:40,121 middleware Incrementing visit count for 2025-07-21 to 15
+DEBUG 2025-07-20 21:57:42,957 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:57:42,958 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:57:44,795 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:57:44,843 middleware Time spent on /dashboard/: 0.05 seconds
+DEBUG 2025-07-20 21:57:44,844 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:57:44,868 middleware Incrementing visit count for 2025-07-21 to 16
+DEBUG 2025-07-20 21:57:46,645 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:57:46,646 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:00,492 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:00,493 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:16,323 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:16,325 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:17,236 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:17,236 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:24,966 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:24,977 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:25,850 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:25,851 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:26,069 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:26,071 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:26,225 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:26,225 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:58:44,539 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:59:13,773 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:59:16,006 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:16,007 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:16,908 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:16,909 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:20,224 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:20,225 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:29,372 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:59:30,853 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:30,854 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:36,015 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:36,016 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:39,893 middleware Processing request for path: /dashboard/
+DEBUG 2025-07-20 21:59:39,929 middleware Time spent on /dashboard/: 0.04 seconds
+DEBUG 2025-07-20 21:59:39,930 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 21:59:39,947 middleware Incrementing visit count for 2025-07-21 to 17
+DEBUG 2025-07-20 21:59:45,363 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 21:59:49,909 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:49,910 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:56,058 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 21:59:56,059 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:00:03,153 middleware Processing request for path: /admin/analytics/
+DEBUG 2025-07-20 22:00:03,154 middleware Skipping tracking for excluded path: /admin/analytics/
+DEBUG 2025-07-20 22:00:10,823 middleware Processing request for path: /admin/analytics/
+DEBUG 2025-07-20 22:00:10,824 middleware Skipping tracking for excluded path: /admin/analytics/
+DEBUG 2025-07-20 22:00:49,998 middleware Processing request for path: /
+DEBUG 2025-07-20 22:00:50,055 middleware Time spent on /: 0.06 seconds
+DEBUG 2025-07-20 22:00:50,061 middleware Incrementing visit count for 2025-07-21 to 18
+DEBUG 2025-07-20 22:00:50,062 middleware Incrementing unique visitors to 3 for ip_127.0.0.1
+DEBUG 2025-07-20 22:00:50,240 middleware Processing request for path: /media/products/2025/07/16/solar-phone-charger.jpg
+DEBUG 2025-07-20 22:00:50,243 middleware Processing request for path: /media/products/2025/07/16/led-light-bulbs-4-pack.jpg
+DEBUG 2025-07-20 22:00:50,244 middleware Skipping tracking for excluded path: /media/products/2025/07/16/solar-phone-charger.jpg
+DEBUG 2025-07-20 22:00:50,244 middleware Skipping tracking for excluded path: /media/products/2025/07/16/led-light-bulbs-4-pack.jpg
+DEBUG 2025-07-20 22:00:50,692 middleware Processing request for path: /media/products/2025/07/16/solar-garden-lights.jpg
+DEBUG 2025-07-20 22:00:50,692 middleware Skipping tracking for excluded path: /media/products/2025/07/16/solar-garden-lights.jpg
+DEBUG 2025-07-20 22:00:50,701 middleware Processing request for path: /media/products/2025/07/16/organic-seeds-pack.jpg
+DEBUG 2025-07-20 22:00:50,704 middleware Processing request for path: /media/products/2025/07/16/rain-barrel.jpg
+DEBUG 2025-07-20 22:00:50,704 middleware Skipping tracking for excluded path: /media/products/2025/07/16/organic-seeds-pack.jpg
+DEBUG 2025-07-20 22:00:50,706 middleware Processing request for path: /media/products/2025/07/16/compost-bin.jpg
+DEBUG 2025-07-20 22:00:50,708 middleware Processing request for path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 22:00:50,710 middleware Skipping tracking for excluded path: /media/products/2025/07/16/rain-barrel.jpg
+DEBUG 2025-07-20 22:00:50,716 middleware Processing request for path: /media/diy/2025/07/16/diy-solar-water-heater.jpg
+DEBUG 2025-07-20 22:00:50,718 middleware Processing request for path: /media/diy/2025/07/16/upcycled-t-shirt-tote-bag.jpg
+DEBUG 2025-07-20 22:00:50,718 middleware Skipping tracking for excluded path: /media/products/2025/07/16/compost-bin.jpg
+DEBUG 2025-07-20 22:00:50,720 middleware Skipping tracking for excluded path: /media/diy/2025/07/20/OIP.jpeg
+DEBUG 2025-07-20 22:00:50,724 middleware Skipping tracking for excluded path: /media/diy/2025/07/16/diy-solar-water-heater.jpg
+DEBUG 2025-07-20 22:00:50,726 middleware Skipping tracking for excluded path: /media/diy/2025/07/16/upcycled-t-shirt-tote-bag.jpg
+DEBUG 2025-07-20 22:00:51,204 middleware Processing request for path: /favicon.ico
+DEBUG 2025-07-20 22:00:51,207 middleware Skipping tracking for excluded path: /favicon.ico
+DEBUG 2025-07-20 22:00:53,557 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:00:53,558 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:01:04,888 middleware Processing request for path: /admin/analytics/
+DEBUG 2025-07-20 22:01:04,889 middleware Skipping tracking for excluded path: /admin/analytics/
+DEBUG 2025-07-20 22:01:35,058 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 22:01:55,032 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:01:55,033 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:01:57,321 middleware Processing request for path: /analytics/
+DEBUG 2025-07-20 22:01:57,392 middleware Time spent on /analytics/: 0.07 seconds
+DEBUG 2025-07-20 22:01:57,393 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 22:01:57,406 middleware Incrementing visit count for 2025-07-21 to 19
+DEBUG 2025-07-20 22:02:12,393 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 22:02:14,531 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:14,532 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:33,354 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:33,355 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:45,057 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:45,058 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:02:47,336 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 22:03:00,158 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:00,159 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:05,736 middleware Processing request for path: /
+DEBUG 2025-07-20 22:03:05,775 middleware Time spent on /: 0.04 seconds
+DEBUG 2025-07-20 22:03:05,778 middleware Incrementing visit count for 2025-07-21 to 20
+DEBUG 2025-07-20 22:03:08,153 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:08,153 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:22,497 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:22,498 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:03:36,672 middleware Processing request for path: /analytics/
+DEBUG 2025-07-20 22:03:36,764 middleware Time spent on /analytics/: 0.09 seconds
+DEBUG 2025-07-20 22:03:36,765 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 22:03:36,778 middleware Incrementing visit count for 2025-07-21 to 21
+DEBUG 2025-07-20 22:03:53,288 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-20 22:04:02,163 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:04:02,164 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:04:02,913 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:04:02,913 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:45,260 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:45,260 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:46,531 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:46,531 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:49,878 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:08:49,879 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:06,182 middleware Processing request for path: /analytics/
+DEBUG 2025-07-20 22:09:06,237 middleware Time spent on /analytics/: 0.05 seconds
+DEBUG 2025-07-20 22:09:06,237 middleware Logging visit for authenticated user: admin
+DEBUG 2025-07-20 22:09:06,247 middleware Incrementing visit count for 2025-07-21 to 22
+DEBUG 2025-07-20 22:09:27,740 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:27,741 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,077 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,077 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,640 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,640 middleware Skipping tracking for excluded path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,827 middleware Processing request for path: /admin-dashboard/
+DEBUG 2025-07-20 22:09:30,828 middleware Skipping tracking for excluded path: /admin-dashboard/

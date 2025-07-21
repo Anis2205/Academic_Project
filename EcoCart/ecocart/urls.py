@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from greenapp import views
 from django.contrib.auth import views as auth_views
+from greenapp.views_admin import visitor_analytics, AdminDashboardView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -80,6 +81,10 @@ urlpatterns = [
     
     # Search
     path('search/', views.SearchView.as_view(), name='search'),
+    
+    # Admin dashboard
+    path('admin-dashboard/', AdminDashboardView.as_view(), name='admin_dashboard'),
+    path('analytics/', visitor_analytics, name='visitor_analytics'),
 ]
 
 # Serve media files in development

@@ -1,0 +1,33 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block content %}
+<div style="margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 4px;">
+    <h2>Recent Visitors Today</h2>
+    {% if recent_visitors %}
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Type</th>
+                    <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Identifier</th>
+                    <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Page</th>
+                    <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for visitor in recent_visitors %}
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ visitor.type }}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ visitor.identifier }}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ visitor.page }}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ visitor.time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No visitors recorded today.</p>
+    {% endif %}
+</div>
+{{ block.super }}
+{% endblock %}

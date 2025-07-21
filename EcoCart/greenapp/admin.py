@@ -5,6 +5,7 @@ from .models import (
     Category, Product, Review, DIY, DIYComment, UserProfile, 
     WishlistItem, VisitLog, ExternalResource, ContactMessage, Newsletter
 )
+from .models_stats import SiteVisitStats
 
 
 @admin.register(Category)
@@ -89,10 +90,14 @@ class WishlistItemAdmin(admin.ModelAdmin):
 
 @admin.register(VisitLog)
 class VisitLogAdmin(admin.ModelAdmin):
-    list_display = ['user', 'page_visited', 'timestamp', 'time_spent', 'ip_address']
-    list_filter = ['timestamp', 'page_visited']
-    search_fields = ['user__username', 'page_visited', 'ip_address']
+    list_display = ['user', 'session_key', 'page_visited', 'timestamp', 'time_spent', 'ip_address']
+    list_filter = ['timestamp', 'page_visited', 'user']
+    search_fields = ['user__username', 'session_key', 'page_visited', 'ip_address']
     date_hierarchy = 'timestamp'
+    readonly_fields = ['user', 'session_key', 'page_visited', 'timestamp', 'time_spent', 'ip_address']
+    
+    def has_add_permission(self, request):
+        return False
 
 
 @admin.register(ExternalResource)
@@ -120,3 +125,42 @@ class NewsletterAdmin(admin.ModelAdmin):
     list_filter = ['is_active', 'subscribed_date']
     search_fields = ['email']
     date_hierarchy = 'subscribed_date'
+
+
+@admin.register(SiteVisitStats)
+class SiteVisitStatsAdmin(admin.ModelAdmin):
+    list_display = ['date', 'visit_count', 'unique_visitors']
+    list_filter = ['date']
+    date_hierarchy = 'date'
+    
+    def changelist_view(self, request, extra_context=None):
+        # Get today's visitors
+        extra_context = extra_context or {}
+        today = timezone.now().date()
+        
+        # Get recent visitors from VisitLog
+        recent_visits = VisitLog.objects.filter(timestamp__date=today).order_by('-timestamp')[:20]
+        
+        # Format visitor data for display
+        visitor_data = []
+        for visit in recent_visits:
+            if visit.user:
+                visitor_type = 'User'
+                identifier = visit.user.username
+            else:
+                visitor_type = 'Anonymous'
+                identifier = visit.ip_address
+            
+            visitor_data.append({
+                'type': visitor_type,
+                'identifier': identifier,
+                'page': visit.page_visited,
+                'time': visit.timestamp,
+            })
+        
+        extra_context['recent_visitors'] = visitor_data
+        return super().changelist_view(request, extra_context=extra_context)
+
+
+# user name : admin
+# password : 123superuser

@@ -1,0 +1,7 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block userlinks %}
+    <a href="{% url 'visitor_analytics' %}" style="margin-right: 10px;">{% trans 'Visitor Analytics' %}</a>
+    {{ block.super }}
+{% endblock %}

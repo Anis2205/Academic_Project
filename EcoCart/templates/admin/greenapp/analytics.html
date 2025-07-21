@@ -1,0 +1,137 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; {{ title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>Visitor Analytics</h1>
+    
+    <div class="module">
+        <h2>Today's Statistics</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <td>{{ today_stats.date }}</td>
+            </tr>
+            <tr>
+                <th>Total Visits</th>
+                <td>{{ today_stats.visit_count }}</td>
+            </tr>
+            <tr>
+                <th>Unique Visitors</th>
+                <td>{{ today_stats.unique_visitors }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="module">
+        <h2>Recent Visitors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>IP Address</th>
+                    <th>Page</th>
+                    <th>Time</th>
+                    <th>Time Spent</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for visit in recent_visits %}
+                <tr>
+                    <td>{% if visit.user %}{{ visit.user.username }}{% else %}Anonymous{% endif %}</td>
+                    <td>{{ visit.ip_address }}</td>
+                    <td>{{ visit.page_visited }}</td>
+                    <td>{{ visit.timestamp }}</td>
+                    <td>{{ visit.time_spent }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No visits recorded.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="module">
+        <h2>Top Pages</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Page</th>
+                    <th>Visits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for page in top_pages %}
+                <tr>
+                    <td>{{ page.page_visited }}</td>
+                    <td>{{ page.count }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">No data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="module">
+        <h2>Top Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Visits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in top_users %}
+                <tr>
+                    <td>{{ user.user__username }}</td>
+                    <td>{{ user.count }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">No data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="module">
+        <h2>Top IP Addresses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>IP Address</th>
+                    <th>Visits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ip in top_ips %}
+                <tr>
+                    <td>{{ ip.ip_address }}</td>
+                    <td>{{ ip.count }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">No data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

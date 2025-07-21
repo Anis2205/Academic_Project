@@ -1,0 +1,154 @@
+{% extends 'greenapp/base.html' %}
+
+{% block title %}Admin Dashboard | EcoCart{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Admin Dashboard</h1>
+    
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Visits</h5>
+                    <h2 class="display-4">{{ today_visits }}</h2>
+                    <p class="card-text">{{ today_unique }} unique visitors</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Yesterday's Visits</h5>
+                    <h2 class="display-4">{{ yesterday_visits }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Weekly Visits</h5>
+                    <h2 class="display-4">{{ weekly_visits }}</h2>
+                    <p class="card-text">{{ weekly_unique }} unique visitors</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Monthly Visits</h5>
+                    <h2 class="display-4">{{ monthly_visits }}</h2>
+                    <p class="card-text">{{ monthly_unique }} unique visitors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Visit Trends (Last 30 Days)</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="visitsChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Most Visited Pages</h5>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for page in popular_pages %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ page.page_visited|truncatechars:30 }}
+                            <span class="badge bg-primary rounded-pill">{{ page.count }}</span>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No data available</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Recent Visitors</h5>
+                    <a href="{% url 'visitor_analytics' %}" class="btn btn-sm btn-primary">Full Analytics</a>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for visit in recent_visits %}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    {% if visit.user %}
+                                        <strong>{{ visit.user.username }}</strong>
+                                    {% else %}
+                                        <span class="text-muted">Anonymous ({{ visit.ip_address|default:'unknown' }})</span>
+                                    {% endif %}
+                                </div>
+                                <small class="text-muted">{{ visit.timestamp|date:"M d, H:i" }}</small>
+                            </div>
+                            <small>{{ visit.page_visited|truncatechars:40 }}</small>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No recent visitors</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('visitsChart').getContext('2d');
+        
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ chart_dates|safe }},
+                datasets: [
+                    {
+                        label: 'Total Visits',
+                        data: {{ chart_visits|safe }},
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Unique Visitors',
+                        data: {{ chart_unique|safe }},
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

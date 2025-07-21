@@ -155,6 +155,10 @@
                             <li><a class="dropdown-item" href="{% url 'my_reviews' %}">My Reviews</a></li>
                             <li><a class="dropdown-item" href="{% url 'my_tutorials' %}">My DIY Tutorials</a></li>
                             <li><a class="dropdown-item" href="{% url 'history' %}">My History</a></li>
+                            {% if user.is_staff %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'admin_dashboard' %}"><i class="fas fa-chart-line me-1"></i>Admin Dashboard</a></li>
+                            {% endif %}
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
