@@ -230,9 +230,9 @@ class DIYDetailView(DetailView):
         if self.object.category:
             context['related_tutorials'] = DIY.objects.filter(
                 category=self.object.category
-            ).exclude(id=self.object.id)[:3]
+            ).exclude(id=self.object.id).exclude(slug='')[:3]
         else:
-            context['related_tutorials'] = DIY.objects.exclude(id=self.object.id)[:3]
+            context['related_tutorials'] = DIY.objects.exclude(id=self.object.id).exclude(slug='')[:3]
         
         # Log visit
         if self.request.user.is_authenticated:

@@ -160,6 +160,7 @@
                 <div class="card-body p-0">
                     <div class="list-group list-group-flush">
                         {% for related in related_tutorials %}
+                        {% if related.slug %}
                         <a href="{% url 'diy_detail' related.slug %}" class="list-group-item list-group-item-action">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="mb-1">{{ related.title }}</h6>
@@ -169,6 +170,7 @@
                             </div>
                             <small class="text-muted">By {{ related.author.username }}</small>
                         </a>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>

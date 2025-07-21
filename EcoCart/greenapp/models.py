@@ -80,10 +80,12 @@ class Review(models.Model):
         return f'Review by {self.user.username} on {self.product.name}'
 
 
+from django.utils.text import slugify
+
 class DIY(models.Model):
     """Model for DIY eco-friendly tutorials"""
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diy_tutorials')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='diy_tutorials')
     description = models.TextField()
@@ -99,6 +101,18 @@ class DIY(models.Model):
     time_required = models.CharField(max_length=100, help_text="Estimated time to complete (e.g., '30 minutes', '2 hours')")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    
+    def save(self, *args, **kwargs):
+        # Generate slug from title if not provided
+        if not self.slug:
+            base_slug = slugify(self.title)
+            self.slug = base_slug
+            # Ensure slug is unique
+            counter = 1
+            while DIY.objects.filter(slug=self.slug).exclude(id=self.id).exists():
+                self.slug = f"{base_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
     
     class Meta:
         verbose_name = 'DIY Tutorial'
