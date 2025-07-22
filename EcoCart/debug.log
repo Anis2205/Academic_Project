@@ -515,3 +515,164 @@ DEBUG 2025-07-22 15:54:17,525 middleware Processing request for path: /products/
 DEBUG 2025-07-22 15:54:17,621 middleware Time spent on /products/led-light-bulbs-4-pack/: 0.10 seconds
 DEBUG 2025-07-22 15:54:17,622 middleware Logging visit for authenticated user: anisa2205
 DEBUG 2025-07-22 15:54:17,638 middleware Incrementing visit count for 2025-07-22 to 23
+DEBUG 2025-07-22 15:57:59,098 middleware Processing request for path: /my-tutorials/
+DEBUG 2025-07-22 15:57:59,123 middleware Time spent on /my-tutorials/: 0.03 seconds
+DEBUG 2025-07-22 15:57:59,125 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:57:59,150 middleware Incrementing visit count for 2025-07-22 to 24
+DEBUG 2025-07-22 15:58:00,506 middleware Processing request for path: /diy/homemade-beeswax-food-wraps-1/delete/
+DEBUG 2025-07-22 15:58:00,531 middleware Time spent on /diy/homemade-beeswax-food-wraps-1/delete/: 0.02 seconds
+DEBUG 2025-07-22 15:58:00,532 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:00,553 middleware Incrementing visit count for 2025-07-22 to 25
+DEBUG 2025-07-22 15:58:33,106 middleware Processing request for path: /diy/homemade-beeswax-food-wraps-1/delete/
+DEBUG 2025-07-22 15:58:33,147 middleware Time spent on /diy/homemade-beeswax-food-wraps-1/delete/: 0.04 seconds
+DEBUG 2025-07-22 15:58:33,148 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:33,168 middleware Incrementing visit count for 2025-07-22 to 26
+DEBUG 2025-07-22 15:58:33,194 middleware Processing request for path: /diy/
+DEBUG 2025-07-22 15:58:33,256 middleware Time spent on /diy/: 0.06 seconds
+DEBUG 2025-07-22 15:58:33,257 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:33,278 middleware Incrementing visit count for 2025-07-22 to 27
+DEBUG 2025-07-22 15:58:36,329 middleware Processing request for path: /history/
+DEBUG 2025-07-22 15:58:36,423 middleware Time spent on /history/: 0.09 seconds
+DEBUG 2025-07-22 15:58:36,424 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:36,446 middleware Incrementing visit count for 2025-07-22 to 28
+DEBUG 2025-07-22 15:58:39,067 middleware Processing request for path: /my-reviews/
+DEBUG 2025-07-22 15:58:39,103 middleware Time spent on /my-reviews/: 0.04 seconds
+DEBUG 2025-07-22 15:58:39,104 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:39,133 middleware Incrementing visit count for 2025-07-22 to 29
+DEBUG 2025-07-22 15:58:48,053 middleware Processing request for path: /wishlist/
+DEBUG 2025-07-22 15:58:48,091 middleware Time spent on /wishlist/: 0.04 seconds
+DEBUG 2025-07-22 15:58:48,092 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:48,114 middleware Incrementing visit count for 2025-07-22 to 30
+DEBUG 2025-07-22 15:58:50,600 middleware Processing request for path: /products/solar-garden-lights/
+DEBUG 2025-07-22 15:58:50,674 middleware Time spent on /products/solar-garden-lights/: 0.07 seconds
+DEBUG 2025-07-22 15:58:50,675 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 15:58:50,694 middleware Incrementing visit count for 2025-07-22 to 31
+DEBUG 2025-07-22 16:07:47,094 middleware Processing request for path: /products/
+DEBUG 2025-07-22 16:07:47,278 middleware Time spent on /products/: 0.18 seconds
+DEBUG 2025-07-22 16:07:47,279 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:07:47,296 middleware Incrementing visit count for 2025-07-22 to 32
+DEBUG 2025-07-22 16:08:55,139 middleware Processing request for path: /
+DEBUG 2025-07-22 16:08:55,187 middleware Time spent on /: 0.05 seconds
+DEBUG 2025-07-22 16:08:55,188 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:08:55,208 middleware Incrementing visit count for 2025-07-22 to 33
+DEBUG 2025-07-22 16:09:00,180 middleware Processing request for path: /products/
+DEBUG 2025-07-22 16:09:00,368 middleware Time spent on /products/: 0.19 seconds
+DEBUG 2025-07-22 16:09:00,369 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:00,385 middleware Incrementing visit count for 2025-07-22 to 34
+DEBUG 2025-07-22 16:09:02,996 middleware Processing request for path: /diy/
+DEBUG 2025-07-22 16:09:03,043 middleware Time spent on /diy/: 0.05 seconds
+DEBUG 2025-07-22 16:09:03,044 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:03,073 middleware Incrementing visit count for 2025-07-22 to 35
+DEBUG 2025-07-22 16:09:07,466 middleware Processing request for path: /diy/
+DEBUG 2025-07-22 16:09:07,505 middleware Time spent on /diy/: 0.04 seconds
+DEBUG 2025-07-22 16:09:07,507 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:07,535 middleware Incrementing visit count for 2025-07-22 to 36
+DEBUG 2025-07-22 16:09:08,333 middleware Processing request for path: /diy/new/
+DEBUG 2025-07-22 16:09:08,365 middleware Time spent on /diy/new/: 0.03 seconds
+DEBUG 2025-07-22 16:09:08,366 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:08,393 middleware Incrementing visit count for 2025-07-22 to 37
+DEBUG 2025-07-22 16:09:11,362 middleware Processing request for path: /diy/
+DEBUG 2025-07-22 16:09:11,385 middleware Time spent on /diy/: 0.02 seconds
+DEBUG 2025-07-22 16:09:11,386 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:11,402 middleware Incrementing visit count for 2025-07-22 to 38
+DEBUG 2025-07-22 16:09:12,810 middleware Processing request for path: /diy/
+DEBUG 2025-07-22 16:09:12,864 middleware Time spent on /diy/: 0.05 seconds
+DEBUG 2025-07-22 16:09:12,867 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:12,890 middleware Incrementing visit count for 2025-07-22 to 39
+DEBUG 2025-07-22 16:09:13,224 middleware Processing request for path: /resources/
+DEBUG 2025-07-22 16:09:13,261 middleware Time spent on /resources/: 0.04 seconds
+DEBUG 2025-07-22 16:09:13,262 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:13,290 middleware Incrementing visit count for 2025-07-22 to 40
+DEBUG 2025-07-22 16:09:16,665 middleware Processing request for path: /contact/
+DEBUG 2025-07-22 16:09:16,796 middleware Time spent on /contact/: 0.13 seconds
+DEBUG 2025-07-22 16:09:16,797 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:16,819 middleware Incrementing visit count for 2025-07-22 to 41
+DEBUG 2025-07-22 16:09:21,091 middleware Processing request for path: /profile/
+DEBUG 2025-07-22 16:09:21,156 middleware Time spent on /profile/: 0.06 seconds
+DEBUG 2025-07-22 16:09:21,157 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:21,186 middleware Incrementing visit count for 2025-07-22 to 42
+DEBUG 2025-07-22 16:09:27,170 middleware Processing request for path: /profile/
+DEBUG 2025-07-22 16:09:27,217 middleware Time spent on /profile/: 0.05 seconds
+DEBUG 2025-07-22 16:09:27,218 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:27,241 middleware Incrementing visit count for 2025-07-22 to 43
+DEBUG 2025-07-22 16:09:29,850 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:09:29,871 middleware Time spent on /profile/edit/: 0.02 seconds
+DEBUG 2025-07-22 16:09:29,872 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:29,896 middleware Incrementing visit count for 2025-07-22 to 44
+DEBUG 2025-07-22 16:09:34,700 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:09:34,720 middleware Time spent on /profile/edit/: 0.02 seconds
+DEBUG 2025-07-22 16:09:34,721 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:34,744 middleware Incrementing visit count for 2025-07-22 to 45
+DEBUG 2025-07-22 16:09:37,817 middleware Processing request for path: /my-reviews/
+DEBUG 2025-07-22 16:09:37,843 middleware Time spent on /my-reviews/: 0.03 seconds
+DEBUG 2025-07-22 16:09:37,844 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:37,869 middleware Incrementing visit count for 2025-07-22 to 46
+DEBUG 2025-07-22 16:09:47,692 middleware Processing request for path: /products/solar-garden-lights/
+DEBUG 2025-07-22 16:09:47,740 middleware Time spent on /products/solar-garden-lights/: 0.05 seconds
+DEBUG 2025-07-22 16:09:47,740 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:47,754 middleware Incrementing visit count for 2025-07-22 to 47
+DEBUG 2025-07-22 16:09:49,325 middleware Processing request for path: /wishlist/toggle/13/
+DEBUG 2025-07-22 16:09:49,363 middleware Time spent on /wishlist/toggle/13/: 0.04 seconds
+DEBUG 2025-07-22 16:09:49,364 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:49,383 middleware Incrementing visit count for 2025-07-22 to 48
+DEBUG 2025-07-22 16:09:49,429 middleware Processing request for path: /products/
+DEBUG 2025-07-22 16:09:49,524 middleware Time spent on /products/: 0.09 seconds
+DEBUG 2025-07-22 16:09:49,525 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:49,533 middleware Incrementing visit count for 2025-07-22 to 49
+DEBUG 2025-07-22 16:09:52,314 middleware Processing request for path: /history/
+DEBUG 2025-07-22 16:09:52,338 middleware Time spent on /history/: 0.02 seconds
+DEBUG 2025-07-22 16:09:52,339 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:52,362 middleware Incrementing visit count for 2025-07-22 to 50
+DEBUG 2025-07-22 16:09:55,212 middleware Processing request for path: /my-reviews/
+DEBUG 2025-07-22 16:09:55,236 middleware Time spent on /my-reviews/: 0.02 seconds
+DEBUG 2025-07-22 16:09:55,237 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:55,246 middleware Incrementing visit count for 2025-07-22 to 51
+DEBUG 2025-07-22 16:09:57,272 middleware Processing request for path: /products/organic-seeds-pack/
+DEBUG 2025-07-22 16:09:57,337 middleware Time spent on /products/organic-seeds-pack/: 0.06 seconds
+DEBUG 2025-07-22 16:09:57,338 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:09:57,356 middleware Incrementing visit count for 2025-07-22 to 52
+DEBUG 2025-07-22 16:11:23,506 middleware Processing request for path: /products/organic-seeds-pack/
+DEBUG 2025-07-22 16:11:23,614 middleware Time spent on /products/organic-seeds-pack/: 0.11 seconds
+DEBUG 2025-07-22 16:11:23,615 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:23,640 middleware Incrementing visit count for 2025-07-22 to 53
+DEBUG 2025-07-22 16:11:32,685 middleware Processing request for path: /wishlist/toggle/12/
+DEBUG 2025-07-22 16:11:32,722 middleware Time spent on /wishlist/toggle/12/: 0.04 seconds
+DEBUG 2025-07-22 16:11:32,723 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:32,748 middleware Incrementing visit count for 2025-07-22 to 54
+DEBUG 2025-07-22 16:11:32,783 middleware Processing request for path: /products/
+DEBUG 2025-07-22 16:11:32,988 middleware Time spent on /products/: 0.20 seconds
+DEBUG 2025-07-22 16:11:32,990 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:33,013 middleware Incrementing visit count for 2025-07-22 to 55
+DEBUG 2025-07-22 16:11:36,312 middleware Processing request for path: /history/
+DEBUG 2025-07-22 16:11:36,348 middleware Time spent on /history/: 0.04 seconds
+DEBUG 2025-07-22 16:11:36,350 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:36,375 middleware Incrementing visit count for 2025-07-22 to 56
+DEBUG 2025-07-22 16:11:40,567 middleware Processing request for path: /profile/
+DEBUG 2025-07-22 16:11:40,640 middleware Time spent on /profile/: 0.07 seconds
+DEBUG 2025-07-22 16:11:40,641 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:40,668 middleware Incrementing visit count for 2025-07-22 to 57
+DEBUG 2025-07-22 16:11:41,827 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:11:41,861 middleware Time spent on /profile/edit/: 0.03 seconds
+DEBUG 2025-07-22 16:11:41,863 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:11:41,887 middleware Incrementing visit count for 2025-07-22 to 58
+DEBUG 2025-07-22 16:12:33,767 middleware VisitLogMiddleware initialized
+DEBUG 2025-07-22 16:12:58,056 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:12:58,232 middleware Time spent on /profile/edit/: 0.17 seconds
+DEBUG 2025-07-22 16:12:58,234 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:12:58,255 middleware Incrementing visit count for 2025-07-22 to 59
+DEBUG 2025-07-22 16:14:06,530 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:14:06,751 middleware Time spent on /profile/edit/: 0.22 seconds
+DEBUG 2025-07-22 16:14:06,752 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:14:06,763 middleware Incrementing visit count for 2025-07-22 to 60
+DEBUG 2025-07-22 16:14:06,780 middleware Processing request for path: /profile/
+DEBUG 2025-07-22 16:14:06,855 middleware Time spent on /profile/: 0.07 seconds
+DEBUG 2025-07-22 16:14:06,857 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:14:06,879 middleware Incrementing visit count for 2025-07-22 to 61
+DEBUG 2025-07-22 16:14:10,760 middleware Processing request for path: /profile/edit/
+DEBUG 2025-07-22 16:14:10,793 middleware Time spent on /profile/edit/: 0.03 seconds
+DEBUG 2025-07-22 16:14:10,794 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:14:10,830 middleware Incrementing visit count for 2025-07-22 to 62
+DEBUG 2025-07-22 16:14:12,470 middleware Processing request for path: /password-reset/
+DEBUG 2025-07-22 16:14:12,490 middleware Time spent on /password-reset/: 0.02 seconds
+DEBUG 2025-07-22 16:14:12,491 middleware Logging visit for authenticated user: anisa2205
+DEBUG 2025-07-22 16:14:12,517 middleware Incrementing visit count for 2025-07-22 to 63

@@ -184,11 +184,13 @@
                 {% for related in related_products %}
                 <div class="col-md-3 mb-4">
                     <div class="card h-100 product-card">
-                        {% if related.image %}
-                        <img src="{{ related.image.url }}" class="card-img-top" alt="{{ related.name }}">
-                        {% else %}
-                        <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No Image">
-                        {% endif %}
+                        <div style="height: 180px; overflow: hidden;">
+                            {% if related.image %}
+                            <img src="{{ related.image.url }}" class="card-img-top" alt="{{ related.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            {% else %}
+                            <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            {% endif %}
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ related.name }}</h5>
                             <p class="card-text text-success fw-bold">${{ related.price }}</p>
